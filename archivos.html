@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Archivos — Portafolio</title>
+  <meta name="description" content="Espacios para compartir archivos. 7 slots con ver/descargar (público) y subir/eliminar (admin local)." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+  <div class="topbar__inner container">
+    <a class="brand" href="./index.html">JJDG</a>
+    <nav class="nav">
+      <a href="./index.html" >Portada</a>
+      <a href="./quien-soy.html" >Quién soy</a>
+      <a href="./archivos.html" style="background:rgba(255,255,255,.06)">Archivos</a>
+    </nav>
+  </div>
+</header>
+  <main class="container layout">
+    <aside class="sidebar">
+      <h2 style="margin:0 0 6px 0">Recursos</h2>
+      <p class="muted small">Hay 7 espacios. Visitantes pueden ver/descargar archivos publicados. En modo admin (local) puedes subir/reemplazar y eliminar de forma individual.</p>
+      <div id="slots" class="slots"></div>
+      <div id="adminPanel" class="hidden" aria-hidden="true" style="margin-top:10px">
+        <h3 style="margin:6px 0">Panel administrador</h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button id="exportManifest" class="btn">Exportar manifest</button>
+          <button id="clearLocal" class="btn danger">Borrar todo (local)</button>
+        </div>
+      </div>
+    </aside>
+    <section>
+      <header class="card" style="margin-bottom:16px">
+        <h1 style="margin:0 0 .25rem">Archivos</h1>
+        <p class="subtitle">Panel de recursos</p>
+        <p class="muted small">Manifest público: <code>assets/files.json</code> · Carpeta: <code>/uploads/</code></p>
+        <div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="./index.html">← Portada</a>
+          <button id="adminToggle" class="chip" aria-pressed="false" title="Modo administrador (local)">🔒 Admin</button>
+        </div>
+      </header>
+      <section class="card">
+        <h2 style="margin:0 0 10px 0">Cómo funciona</h2>
+        <ol class="small">
+          <li>Para publicar: sube archivos a <code>/uploads/</code> y mapea en <code>assets/files.json</code>.</li>
+          <li>En Admin (local) puedes previsualizar: Subir/Reemplazar y Eliminar por slot.</li>
+          <li>Usa “Exportar manifest” para descargar el JSON actualizado y súbelo como <code>assets/files.json</code>.</li>
+        </ol>
+      </section>
+    </section>
+  </main>
+  <footer class="footer">
+  <div class="container inner small muted">© <span id="year"></span> Juan José De León Guzmán · Sitio estático en GitHub Pages</div>
+</footer>
+<script src="./assets/common.js" defer></script>
+  <script src="./assets/app.js" defer></script>
+</body>
+</html>
